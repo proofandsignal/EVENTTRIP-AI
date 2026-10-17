@@ -1,0 +1,11 @@
+{
+  "name": "eventtrip-ai",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test",
+    "check": "node --check src/app.js && node --check src/core/search.js && node --check src/core/cost.js && node --check src/core/partner-gate.js && node --check src/data/trip-ideas.js && npm test"
+  },
+  "engines": { "node": ">=20" }
+}

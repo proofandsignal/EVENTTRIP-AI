@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0a1325">
+<meta name="description" content="Explore budget travel, luxury stays and experiences with one trip cost planner. Research preview; no live bookings.">
+<title>EventTrip AI — One trip. The full picture.</title>
+<link rel="stylesheet" href="./src/styles.css">
+<script type="module" src="./src/app.js"></script>
+</head>
+<body>
+<a class="skip-link" href="#discover">Skip to trip discovery</a>
+<header class="header wrap">
+  <a href="#home" class="brand"><span class="star" aria-hidden="true">✦</span>eventtrip<span class="accent">.ai</span></a>
+  <nav aria-label="Main navigation"><a href="#discover">Explore</a><a href="#cost">Trip cost</a><a href="#about">How it works</a></nav>
+  <span class="status">RESEARCH PREVIEW</span>
+</header>
+<main id="home">
+<section class="hero wrap">
+  <div><p class="eyebrow">● &nbsp;BUDGET · LUXURY · EVENTS</p><h1>One trip.<br><em>The full picture.</em></h1>
+  <p class="lead">A smarter way to plan the entire experience — from a winter city break to a premium escape or concert weekend.</p>
+  <a class="primary" href="#discover">Explore trip ideas ↗</a>
+  <p class="small">Discovery prototype. No live flight prices, event tickets or booking links yet.</p></div>
+  <div class="hero-art" aria-hidden="true"><div class="ticket"><small>THE COMPLETE TRIP</small><strong>Fly. Stay. Experience.</strong><span>Know the cost before you go.</span></div></div>
+</section>
+<section class="discover" id="discover">
+<div class="wrap">
+  <p class="eyebrow">01 / DISCOVER</p><div class="section-top"><h2>Where to next?</h2><p>Explore planning ideas while verified partner offers are being integrated.</p></div>
+  <form class="search-box" id="search-form" role="search">
+    <div class="field"><label for="search-query">SEARCH IDEAS</label><input type="search" id="search-query" placeholder="Winter, concerts, city break…" autocomplete="off"></div>
+    <div class="field"><label for="destination">DESTINATION</label><select id="destination"><option value="all">All destinations</option><option>Vienna</option><option>Prague</option><option>Budapest</option><option>London</option><option>Paris</option><option>Rome</option></select></div>
+    <button class="primary" type="submit">Find ideas →</button>
+  </form>
+  <div class="toolbar"><div class="segments" role="group" aria-label="Travel category">
+    <button type="button" aria-pressed="true" data-segment="all">All trips</button>
+    <button type="button" aria-pressed="false" data-segment="budget">Budget</button>
+    <button type="button" aria-pressed="false" data-segment="luxury">Luxury</button>
+    <button type="button" aria-pressed="false" data-segment="events">Events</button>
+  </div><p id="result-count" role="status" aria-live="polite"></p></div>
+  <div id="cards" class="grid" aria-label="Travel planning ideas"></div>
+  <div id="empty-state" class="empty" hidden><h3>No matching ideas</h3><p>Try a different city or category.</p><button class="text-button" id="reset-filters" type="button">Clear filters →</button></div>
+</div>
+</section>
+<section class="cost wrap" id="cost">
+<div class="cost-copy"><p class="eyebrow">02 / TRUE TRIP COST</p><h2>A cheap flight isn't always a cheap trip.</h2><p>Combine travel, accommodation and experiences. Enter your own estimates; verified prices and partner integrations come later.</p><div class="cost-note">No fake deals. No hidden assumptions. Values are calculated locally in your browser.</div></div>
+<div class="calculator">
+  <div class="calc-heading"><h3>Your trip estimate</h3><span>MANUAL ESTIMATE</span></div>
+  <p id="selected-trip">Choose a planning idea above, or enter your own costs.</p>
+  <form id="cost-calculator" autocomplete="off">
+  <div class="form-grid">
+    <div class="field"><label for="travelers">TRAVELERS</label><input id="travelers" name="travelers" type="number" min="1" max="20" step="1" value="1"></div>
+    <div class="field"><label for="nights">HOTEL NIGHTS</label><input id="nights" name="nights" type="number" min="1" max="30" step="1" value="2"></div>
+    <div class="field"><label for="flight">FLIGHT / TRAVELER (€)</label><input id="flight" name="flight" type="number" min="0" max="1000000" step="0.01" placeholder="Not entered"></div>
+    <div class="field"><label for="hotelNight">HOTEL / NIGHT (€)</label><input id="hotelNight" name="hotelNight" type="number" min="0" max="1000000" step="0.01" placeholder="Not entered"></div>
+    <div class="field"><label for="eventTicket">EVENT / TRAVELER (€)</label><input id="eventTicket" name="eventTicket" type="number" min="0" max="1000000" step="0.01" placeholder="Not entered"></div>
+    <div class="field"><label for="baggage">BAGS / TRAVELER (€)</label><input id="baggage" name="baggage" type="number" min="0" max="1000000" step="0.01" placeholder="Not entered"></div>
+    <div class="field full"><label for="transfers">TRANSFERS / TRIP (€)</label><input id="transfers" name="transfers" type="number" min="0" max="1000000" step="0.01" placeholder="Not entered"></div>
+  </div>
+  <div class="total"><div><small>ESTIMATED TRIP TOTAL</small><output id="cost-total" aria-live="polite">—</output><p id="cost-per-person">Enter costs to calculate</p></div><button type="reset">Reset</button></div>
+  <p id="cost-caption" class="small">Add your own estimates. We do not currently display live prices or booking availability.</p>
+  </form>
+</div>
+</section>
+<section class="about" id="about"><div class="wrap about-grid"><div><p class="eyebrow">03 / THE PROMISE</p><h2>Built around the trip, not another list of links.</h2></div>
+<div><p><strong>Budget.</strong> See costs beyond the headline fare.</p><p><strong>Luxury.</strong> Judge the value of the full stay.</p><p><strong>Events.</strong> Plan the experience and journey together.</p></div></div></section>
+</main>
+<footer class="wrap footer"><span>© 2026 EventTrip AI · A Proof & Signal research prototype.</span>
+<span>Affiliate disclosure: future eligible partner links may earn a commission at no extra cost. No bookings are offered in this version.</span></footer>
+</body></html>
