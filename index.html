@@ -57,7 +57,7 @@
     <div class="field"><label for="baggage">BAGS / TRAVELER (€)</label><input id="baggage" name="baggage" type="number" min="0" max="1000000" step="0.01" placeholder="Not entered"></div>
     <div class="field full"><label for="transfers">TRANSFERS / TRIP (€)</label><input id="transfers" name="transfers" type="number" min="0" max="1000000" step="0.01" placeholder="Not entered"></div>
   </div>
-  <div class="total"><div><small>ESTIMATED TRIP TOTAL</small><output id="cost-total" aria-live="polite">—</output><p id="cost-per-person">Enter costs to calculate</p></div><button type="reset">Reset</button></div>
+  <div class="total"><div><small id="cost-total-label">PARTIAL TRIP ESTIMATE</small><output id="cost-total" aria-live="polite">—</output><p id="cost-per-person">Enter costs to calculate</p></div><button type="reset">Reset</button></div>
   <p id="cost-caption" class="small">Add your own estimates. We do not currently display live prices or booking availability.</p>
   </form>
 </div>
