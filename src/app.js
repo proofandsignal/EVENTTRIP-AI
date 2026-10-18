@@ -63,11 +63,19 @@ $("#reset-filters").addEventListener("click",()=>{
 function updateCost(){
   const values=Object.fromEntries(fields.map(field=>[field.name,field.value]));
   const cost=calculateTripCost(values);
+  const labels={flight:"flight",hotelNight:"hotel",eventTicket:"event tickets",baggage:"baggage",transfers:"transfers"};
   $("#cost-total").textContent=cost.hasEstimate?euro.format(cost.total):"—";
-  $("#cost-per-person").textContent=cost.hasEstimate?euro.format(cost.perTraveler)+" per traveler":"Enter costs to calculate";
+  $("#cost-total-label").textContent=cost.hasEstimate&&cost.complete?"ESTIMATED TRIP TOTAL":"PARTIAL TRIP ESTIMATE";
+  $("#cost-per-person").textContent=!cost.valid?"Correct invalid numbers":cost.hasEstimate
+    ?euro.format(cost.perTraveler)+" per traveler":"Enter costs to calculate";
+  if(!cost.valid){
+    $("#cost-caption").textContent="Invalid input: "+cost.invalidFields.join(", ")+". Use non-negative costs, 1–20 travelers and 1–30 nights.";
+    return;
+  }
+  const missing=cost.missingComponents.map(key=>labels[key]);
   $("#cost-caption").textContent=cost.hasEstimate
-    ?"Your estimates only — incomplete or changing prices can alter the real total. Hotel is per night; transfers are per trip."
-    :"Add your own estimates. We do not currently display live prices or booking availability.";
+    ?"Manual estimate only. "+(missing.length?"Not included: "+missing.join(", ")+". Enter 0 if not applicable. ":"All five cost categories entered. ")+"Hotel is per night; transfers are per trip. No live prices or availability."
+    :"Add your own estimates. No live prices or booking availability. Enter 0 for categories that do not apply.";
 }
 fields.forEach(field=>field.addEventListener("input",updateCost));
 calc.addEventListener("reset",()=>{
