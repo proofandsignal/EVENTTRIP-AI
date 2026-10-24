@@ -1,0 +1,13 @@
+// Editorial planning ideas only. Not live inventory, confirmed events or bookable offers.
+export const TRIP_IDEAS = Object.freeze([
+  { id:"vie-budget", destination:"Vienna", country:"Austria", segment:"budget", title:"Vienna winter city break", description:"Plan the full cost of a winter getaway, beyond the headline flight fare.", tags:["Winter","City break","Flexible dates"], theme:"vienna" },
+  { id:"vie-events", destination:"Vienna", country:"Austria", segment:"events", title:"Vienna festive experiences", description:"Research cultural experiences; dates and event tickets are not yet connected.", tags:["Seasonal","Culture","Experiences"], theme:"vienna" },
+  { id:"vie-luxury", destination:"Vienna", country:"Austria", segment:"luxury", title:"Vienna luxury escape", description:"Build a premium hotel shortlist with a transparent trip cost estimate.", tags:["Luxury","Hotels","Couples"], theme:"vienna" },
+  { id:"prg-budget", destination:"Prague", country:"Czechia", segment:"budget", title:"Prague on a budget", description:"Consider bags, transfers and accommodation before choosing a weekend.", tags:["Budget","Old town","Weekend"], theme:"prague" },
+  { id:"prg-events", destination:"Prague", country:"Czechia", segment:"events", title:"Prague events getaway", description:"Plan an experience together with travel and hotel costs.", tags:["Events","Music","Culture"], theme:"prague" },
+  { id:"bud-budget", destination:"Budapest", country:"Hungary", segment:"budget", title:"Budapest winter weekend", description:"Compare the components of a short city break.", tags:["Winter","Budget","Weekend"], theme:"budapest" },
+  { id:"bud-luxury", destination:"Budapest", country:"Hungary", segment:"luxury", title:"Budapest premium stay", description:"Outline a comfortable stay without treating an estimate as an available price.", tags:["Luxury","Wellness","Hotels"], theme:"budapest" },
+  { id:"lon-events", destination:"London", country:"United Kingdom", segment:"events", title:"London concert trip planner", description:"Prepare a concert travel budget. Artists, dates and tickets require verification.", tags:["Concerts","Events","Trips"], theme:"london" },
+  { id:"par-luxury", destination:"Paris", country:"France", segment:"luxury", title:"Paris luxury shortlist", description:"Compare total travel value, not only a nightly hotel price.", tags:["Luxury","Hotels","City break"], theme:"paris" },
+  { id:"rom-events", destination:"Rome", country:"Italy", segment:"events", title:"Rome culture & experiences", description:"Start with a cultural experience and estimate the whole journey.", tags:["Culture","Events","Experiences"], theme:"rome" }
+]);
