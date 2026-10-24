@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "test": "node --test",
-    "check": "node --check src/app.js && node --check src/core/search.js && node --check src/core/cost.js && node --check src/core/partner-gate.js && node --check src/data/trip-ideas.js && npm test"
+    "check": "node --check src/app.js && node --check src/core/search.js && node --check src/core/cost.js && node --check src/core/partner-gate.js && node --check src/core/referral-preflight.js && node --check scripts/referral-preflight-demo.js && node --check src/data/trip-ideas.js && npm test",
+    "referral:dry-run": "node scripts/referral-preflight-demo.js"
   },
   "engines": { "node": ">=20" }
 }
