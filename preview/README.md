@@ -1,16 +1,30 @@
-# EventTrip AI — TrendSolutions subdomain preview
+# EventTrip AI — Premium Interactive Client Preview
 
-**PREPARED ONLY — NOT DEPLOYED.** The intended temporary public URL is `https://eventtrip.trendsolutions.io/`, after workspace confirmation and domain/DNS checks. EventTrip AI may later move to its own domain.
+**Public static demo only; no real bookings or financial offers.**
 
-Host as a static site from this isolated branch: `preview/eventtrip-trendsolutions-static`.
-Publish directory: `preview/`; build command: `true`; auto deploy: **no**.
+Target hosted URL: https://trendsolutions-eventtrip-preview.onrender.com/ (provider); custom TrendSolutions domain is not configured.
 
-- `preview/index.html`: self-contained, tested v0.3 sample-trip UI, all data synthetic and never real offers.
-- `preview/robots.txt`: requests that crawlers do not index.
-- The HTML contains a noindex tag, no-referrer, and restrictive meta CSP disabling all network connections and frames.
-- Real booking links, external API requests, payments, analytics, cookies and accounts are absent.
-- The real affiliate program registry remains empty in the source branch.
+## Premium refresh, 2026-11-05
+- Replaced sparse demo grid with premium dark editorial design and cinematic destination photography sourced via Unsplash.
+- Interactive collection: 15 synthetic trips covering Budget, Luxury, Events, Winter and Coast filters plus saved favorites.
+- User-controlled destination, date, nights and 1–4 travelers. Room assumptions are 2 persons per room (ceil).
+- Journey Explorer: itinerary by day, transparent five-component estimate, optional baggage/transfers, no real bookings.
+- Compare up to 3 trips; cheapest *synthetic* total never claimed a verified deal.
+- Responsive layout, keyboardable controls and modal dismissal. Dedicated EventTrip brand and About section.
+- **Privacy:** no accounts, forms, tracking, cookies or backend API calls. External requests are limited to optional destination photographs hosted by images.unsplash.com. No referrer is transmitted by image elements; if photos fail, visual backgrounds remain.
 
-Limitations: **noindex and robots.txt are not access controls**; this is public to anyone who receives the URL. Meta CSP is defense in depth but does not replace verified host-level security headers, independent security audit, or hosted browser QA.
+## Local QA
+Chromium (system installed) via Playwright static DOM and click-through:
+- Desktop 1440×900: 14 base checks + 12 advanced = 26 PASS.
+- Mobile 390×844: 14 base checks + 11 advanced = 25 PASS.
+- **51/51 total PASS**, including synthetic €556 Vienna total (2 travelers × 3 nights) and €1,078 (4 travelers × 3 nights, 2 rooms), cost toggles, comparison cap, saved filtering, mobile viewport and blocked booking.
+- Node JavaScript syntax check PASS. External photo retrieval could not be verified in the local sandbox; photographs may depend on the viewer network. Hosted browser QA and third-party image licensing/content are separately reviewable.
 
-Do not use this static branch for affiliate revenue or live booking claims. Render workspace user selection/approval, successful deploy, actual TLS and DNS verification, Android+desktop hosted QA and release approval are mandatory for declaring an online demo delivered. Existing PR #1 remains DRAFT / MERGE LOCKED and production deploy remains locked.
+## Release protections
+- Source: isolated `preview/eventtrip-trendsolutions-static` branch; `main` remains unchanged; Draft PR #1 remains open and unmerged.
+- Render auto-deploy OFF. Changes must be explicitly manually deployed; do not conflate source commit with a delivered URL.
+- No real affiliate destinations are linked; no permission, attribution, purchases or revenue are claimed.
+- `robots.txt` and `noindex` are discovery hints, not authentication. Preview URL is PUBLIC.
+- Render site build plan previously configured as starter; no plan changes authorized.
+
+`SYNTHETIC PREMIUM PREVIEW → MANUAL DEPLOY → VERIFIED HTTPS → CUSTOMER QA → APPROVED AFFILIATE LINK → ATTRIBUTION`
